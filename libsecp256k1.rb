@@ -16,7 +16,7 @@ class Libsecp256k1 < Formula
       ENV.universal_binary
     end
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}", "--enable-module-ecdh", "--enable-module-recovery"
+    system "./configure", "--prefix=#{prefix}", "--enable-module-ecdh", "--enable-module-recovery", "--enable-experimental"
     system "make", "install"
   end
 
