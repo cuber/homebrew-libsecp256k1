@@ -12,6 +12,7 @@ class Libsecp256k1 < Formula
   depends_on "gmp" => :optional
 
   def install
+# Outdated
 #    if build.universal?
 #      ENV.universal_binary
 #    end
