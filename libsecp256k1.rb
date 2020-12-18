@@ -12,9 +12,9 @@ class Libsecp256k1 < Formula
   depends_on "gmp" => :optional
 
   def install
-    if build.universal?
+#     if build.universal?
       ENV.universal_binary
-    end
+#     end
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}", "--enable-module-ecdh", "--enable-module-recovery", "--enable-experimental"
     system "make", "install"
