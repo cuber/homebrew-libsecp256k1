@@ -2,7 +2,7 @@ class Libsecp256k1 < Formula
   desc "Optimized C library for EC operations on curve secp256k1 "
   homepage "https://github.com/bitcoin/secp256k1"
   url "https://github.com/bitcoin/secp256k1.git",
-    :revision => "6ad5cdb42a1a8257289a0423d644dcbdeab0f83c"
+    :revision => "98dac87839838b86094f1bccc71cc20e67b146cc"
   version "0.1"
 
   option :universal
@@ -12,9 +12,6 @@ class Libsecp256k1 < Formula
   depends_on "gmp" => :optional
 
   def install
-    if build.universal?
-      ENV.universal_binary
-    end
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}", "--enable-module-ecdh", "--enable-module-recovery", "--enable-experimental"
     system "make", "install"
@@ -26,7 +23,7 @@ class Libsecp256k1 < Formula
       int main()
       {
         secp256k1_context *ctx =
-          secp256k1_context_create(SECP256K1_CONTEXT_VERIFY |
+        secp256k1_context_create(SECP256K1_CONTEXT_VERIFY |
                                    SECP256K1_CONTEXT_SIGN);
         if (ctx) {
           secp256k1_context_destroy(ctx);
