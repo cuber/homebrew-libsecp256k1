@@ -13,7 +13,7 @@ class Libsecp256k1 < Formula
 
   def install
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}", "--enable-module-ecdh", "--enable-module-recovery", "--enable-experimental"
+    system "./configure", "--prefix=#{prefix}", "--enable-module-ecdh", "--enable-module-extrakeys", "--enable-module-schnorrsig", "--enable-module-recovery", "--enable-experimental"
     system "make", "install"
   end
 
