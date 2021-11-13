@@ -1,8 +1,8 @@
 class Libsecp256k1 < Formula
   desc "Optimized C library for EC operations on curve secp256k1 "
-  homepage "https://github.com/bitcoin/secp256k1"
-  url "https://github.com/bitcoin/secp256k1.git",
-    :revision => "98dac87839838b86094f1bccc71cc20e67b146cc"
+  homepage "https://github.com/bitcoin-core/secp256k1"
+  url "https://github.com/bitcoin-core/secp256k1.git",
+    :revision => "7006f1b97fd8dbf4ef75771dd7c15185811c3f50"
   version "0.1"
 
   option :universal
